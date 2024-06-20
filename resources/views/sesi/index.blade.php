@@ -15,4 +15,8 @@
             <div class="mb-3 d-grid">
                 <button name="submit" type="submit" class="btn btn-primary">Login</button>
             </div>
+            <div class="mb-3 d-grid">
+                <a>Silahkan Redistasi terlebih dahulu....!!</a>
+                <a href="/sesi/register" name="submit" type="submit" class="link">Sig in</a>
+            </div>
 @endsection

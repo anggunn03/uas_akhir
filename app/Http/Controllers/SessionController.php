@@ -78,9 +78,9 @@ class SessionController extends Controller
         ];
 
         if(Auth::attempt($infologin)){
-            return redirect('kontak')->with('success', Auth::user()->name . 'Berhasil login');
+            return redirect('sesi')->with('success', Auth::user()->name . 'Berhasil login');
         } else {
-            return redirect('sesi')->withErrors('Username dan password yang dimasukkan tidak valid');
+            return redirect('sesi/register')->withErrors('Username dan password yang dimasukkan tidak valid');
         }
     }
 }
