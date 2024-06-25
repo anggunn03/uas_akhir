@@ -8,9 +8,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('kontak', kontakController::class);
+Route::resource('kontak', kontakController::class)->middleware('auth');
 
-Route::get('/sesi', [SessionController::class, 'index']);
+
+Route::get('/sesi', [SessionController::class, 'index'])->name('login');
 Route::post('/sesi/login', [SessionController::class, 'login']);
 Route::get('/sesi/logout', [SessionController::class, 'logout']);
 Route::get('/sesi/register', [SessionController::class, 'register']);

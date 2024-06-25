@@ -10,7 +10,8 @@
         <div class="mb-3 row">
             <label for="nohp" class="col-sm-2 col-form-label">NoHp</label>
             <div class="col-sm-10">
-                {{$data->nohp}}
+                <input type="string" class="form-control" name='nohp' value="{{$data->nohp}}" id="nohp">
+                <!--{{$data->nohp}}-->
             </div>
         </div>
         <div class="mb-3 row">

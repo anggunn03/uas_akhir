@@ -8,9 +8,9 @@
   </head>
   <body class="bg-light">
     <main class="container">
-        @if (Auth::check())
+      {{-- @if (Auth::check()) 
         @include('komponen/menu')    
-        @endif
+        @endif --}}
         @include('komponen.pesan')
         @yield('tugas')
     </main>

@@ -41,15 +41,15 @@ class kontakController extends Controller
      */
     public function store(Request $request)
     {
-        Session::flash('nohp',$request->nohp);
+        Session::flash('nohp',$request->nohp); //untuk menyimpan data yg perlu dipertahankan 
         Session::flash('nama',$request->nama);
         Session::flash('alamat',$request->alamat);
-        $request->validate([
-            'nohp'=>'required|numeric|unique:kontak,nohp',
-            'nama'=>'required',
+        $request->validate([ 
+            'nohp'=>'required|numeric|unique:kontak,nohp', //harus diisi|harus angka|tdk bole sama dgn data yg lain
+            'nama'=>'required', 
             'alamat'=>'required',
         ],[
-            'nohp.required'=>'NoHp wajib diisi',
+            'nohp.required'=>'NoHp wajib diisi',//pesan
             'nohp.numeric'=>'NoHp wajib dalam angka',
             'nohp.unique'=>'NoHp yang diisikan sudah ada dalam database',
             'nama.required'=>'Nama wajib diisi',
@@ -60,8 +60,8 @@ class kontakController extends Controller
             'nama'=>$request->nama,
             'alamat'=>$request->alamat,
         ];
-        kontak::create($data);
-        return redirect()->to('kontak')->with('success','Berhasil menambahkan data');
+        kontak::create($data); //untuk memasukkan data ke tabel kontak
+        return redirect()->to('kontak')->with('success','Berhasil menambahkan data'); //melakukan redirect ke hal kontak, dan menambahkan pesan 
     }
 
     /**

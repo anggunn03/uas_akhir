@@ -1,4 +1,5 @@
-@extends('layout.template')        
+@extends('layout.template')
+@extends('komponen.menu')        
         <!-- START DATA -->
         @section('tugas')
         <div class="my-3 p-3 bg-body rounded shadow-sm">
